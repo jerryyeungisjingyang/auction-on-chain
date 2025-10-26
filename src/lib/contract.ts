@@ -1,8 +1,6 @@
 import { ethers } from "ethers";
 
-// Minimal ABI for CarbonTrader.sol based on provided contract
 export const auctionAbi = [
-  // views
   {
     type: "function",
     name: "getAllownance",
@@ -149,7 +147,7 @@ export const auctionAbi = [
   },
 ];
 
-// 硬编码的合约地址：请根据你的部署结果进行修改
+// 后续更改为合约地址
 export const AUCTION_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000001";
 
 export function getContractAddress(): string {
