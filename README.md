@@ -23,6 +23,3 @@ A simpler, more intuitive on-chain auction experience: Bring any quantifiable â€
 - Amounts denominated in ETH and settled on-chain
 - Transaction ID uniquely identifies an auction; ensure consistency between seller and buyer
 - Verify correct on-chain network and account connection before use
-
-
-Translated with DeepL.com (free version)
