@@ -1,25 +1,28 @@
-# 链上物品拍卖
+# On-Chain Item Auctions
 
-一个更简单、更直觉的链上拍卖体验：把任何可量化的“物品/份额”搬上链，发起、竞拍、结算与提现，一步到位。
+A simpler, more intuitive on-chain auction experience: Bring any quantifiable “item/share” onto the chain—launch, bid, settle, and withdraw—all in one seamless step.
 
-- 更直接：原生 ETH 结算，所见即所得
-- 更聚焦：发起拍卖 / 参与竞拍 / 结算 / 提现，流程清晰
-- 更具象：支持“物品信息”（标题/规格/描述），让拍卖所见即所拍
-- 更友好：页面指引直达关键操作，避免反直觉设计
-
----
-
-## 能做什么
-- 卖家：创建拍卖，冻结标的数量，等待买家结算，提现累计款项
-- 买家：缴纳保证金、提交投标信息，中标后补差价并获得标的数量
-- 全程链上记录，透明可查
+- More Direct: Native ETH settlement, what you see is what you get
+- More Focused: Clear workflow for launching auctions / participating in bids / settling transactions / withdrawing funds
+- More Tangible: Supports “item details” (title/specifications/description) so what you see is what you bid on
+- More User-Friendly: Page guidance directs you to key actions, avoiding counterintuitive design
 
 ---
 
-## 设计理念
-- 极简但完整：覆盖真实拍卖闭环，不做冗余复杂功能
-- 清晰而可靠：输入字段直指要点，页面提供必要指引
-- 面向迭代：方便在此基础上扩展详情页、历史、加密出价等能力
-- 金额以 ETH 计价并在链上结算
-- 交易 ID 用于唯一标识一场拍卖，请确保在卖家与买家之间一致
-- 请在使用前确认连接正确的链上网络与账户
+## What You Can Do
+- Sellers: Create auctions, freeze item quantities, await buyer settlements, and withdraw accumulated funds
+- Buyers: Deposit collateral, submit bids, pay the difference upon winning, and receive item quantities
+- Fully on-chain records, transparent and auditable
+
+---
+
+## Design Philosophy
+- Minimalist yet complete: Covers the full auction lifecycle without redundant complexity
+- Clear and Reliable: Input fields focus on essentials; pages provide necessary guidance
+- Iteration-Ready: Easily expand to include detail pages, history, encrypted bidding, and more
+- Amounts denominated in ETH and settled on-chain
+- Transaction ID uniquely identifies an auction; ensure consistency between seller and buyer
+- Verify correct on-chain network and account connection before use
+
+
+Translated with DeepL.com (free version)
