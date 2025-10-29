@@ -35,12 +35,12 @@ contract Auction {
 
     struct trade {
         address seller;
-        uint256 sellAmount; // 卖出的数量（泛化为物品数量）
+        uint256 sellAmount;
         uint256 startTimeStamp;
         uint256 endTimeStamp;
-        uint256 minimumBidAmount; // 最少起拍数量
-        uint256 initPriceOfUint; // 每单位起拍价格
-        string itemInfo; // 物品信息（标题/描述等）
+        uint256 minimumBidAmount;
+        uint256 initPriceOfUint; 
+        string itemInfo; 
         mapping(address => uint256) deposits;
         mapping(address => string) bidInfos;
         mapping(address => string) bidSecrets;
@@ -53,14 +53,12 @@ contract Auction {
     mapping(address => uint256) private s_auctionAmount;
 
     address private immutable i_owner;
-    // 使用原生 ETH 进行结算
 
     constructor() {
         i_owner = msg.sender;
     }
 
     modifier onlyOwner() {
-        // require(msg.sender == i_owner, "Sender is not owner!");
         if (msg.sender != i_owner) {
             revert Auction__NotOwner();
         }
@@ -200,14 +198,12 @@ contract Auction {
         currentTrade.bidSecrets[msg.sender] = secret;
     }
 
-    // 物品信息设置，仅卖家可改
     function setTradeItemInfo(string memory tradeID, string memory info) public {
         trade storage currentTrade = s_trades[tradeID];
         if (currentTrade.seller != msg.sender) revert Auction__NotSeller();
         currentTrade.itemInfo = info;
     }
 
-    // 物品信息读取
     function getTradeItemInfo(string memory tradeID) public view returns (string memory) {
         trade storage currentTrade = s_trades[tradeID];
         return currentTrade.itemInfo;
@@ -242,16 +238,12 @@ contract Auction {
         uint256 allowanceAmount,
         uint256 additionalAmountToPay
     ) public payable {
-        // 获取保证金
         uint256 depositAmount = s_trades[tradeID].deposits[msg.sender];
         s_trades[tradeID].deposits[msg.sender] = 0;
-        // 把保证金和追加金额单独记录给卖家
         address seller = s_trades[tradeID].seller;
         if (msg.value != additionalAmountToPay) revert Auction__ParamsError();
         s_auctionAmount[seller] += (depositAmount + msg.value);
-        // 扣除卖家的冻结标的数量
         s_frozenAllowances[seller] -= allowanceAmount;
-        // 增加买家的标的数量
         s_addressToAllowances[msg.sender] += allowanceAmount;
         emit FinalizeAuction(msg.sender, tradeID, allowanceAmount, msg.value);
     }

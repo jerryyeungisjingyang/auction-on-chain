@@ -1,0 +1,4 @@
+to start this proj
+run this command:
+
+sh ./scripts/init.sh
