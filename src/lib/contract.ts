@@ -148,7 +148,7 @@ export const auctionAbi = [
 ];
 
 // 后续更改为合约地址
-export const AUCTION_CONTRACT_ADDRESS = "0x0000000000000000000000000000000000000001";
+export const AUCTION_CONTRACT_ADDRESS = "0xA107B22BEB9015e382AEf88957CbD617108f02EA";
 
 export function getContractAddress(): string {
   return AUCTION_CONTRACT_ADDRESS;

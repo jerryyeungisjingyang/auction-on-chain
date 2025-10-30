@@ -6,3 +6,5 @@
 /out/
 /.idea/
 /out/
+/tmp/
+/.api_dev_backup/

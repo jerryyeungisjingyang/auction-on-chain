@@ -25,11 +25,11 @@ PLACEHOLDER="0x0000000000000000000000000000000000000001"
 echo "==> Skipping contract address setup (current: $PLACEHOLDER)"
 echo "    You can manually edit AUCTION_CONTRACT_ADDRESS in $CONTRACT_FILE later."
 
-echo "==> Building static export"
-npm run build
+echo "==> Building static export (API temporarily disabled)"
+npm run build:static
 
 echo "\nAll set!"
 echo "- Contract address set in: $CONTRACT_FILE"
 echo "- Dev: npm run dev"
-echo "- Static export ready in: out/"
+echo "- Static export ready in: out/ (use npm run build:static next time)"
 
